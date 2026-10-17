@@ -8,6 +8,8 @@
 #include "src/gui/flappybird/flappybird.h"
 #include "src/gui/library/filespage.h"
 #include "src/gui/gearboy/gearboypage.h"
+#include "src/gui/tools/clocktools.h"
+#include "src/gui/tools/weatherpage.h"
 #include "src/gui/shell/gridpage.h"
 #include "src/gui/shell/icons.h"
 #include "src/gui/shell/settingsrow.h"
@@ -33,6 +35,8 @@ void morepage_init(gui_config_t *cfg) {
 		// An action: the artwork is read from the resource tree on the way in.
 		{"flappy_bird", &icon_menu_flappy_bird, NULL, flappybird_open},
 		{"metronome", &icon_menu_metronome, &metronomepage_screen, NULL},
+		{"clock_tools", &icon_menu_metronome, &clocktools_screen, NULL},
+		{"weather", &icon_sun, &weather_screen, NULL},
 	};
 
 	// Two columns by three rows, like the Music and Wireless pages, so a tile

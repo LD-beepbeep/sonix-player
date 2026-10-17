@@ -68,6 +68,8 @@
 #include "src/system/net/wifitransfer.h"
 #include "src/system/streaming/radio.h"
 #include "src/gui/streaming/radiopage.h"
+#include "src/gui/streaming/rsspage.h"
+#include "src/gui/streaming/customstream.h"
 #include "src/gui/library/search.h"
 #include "src/gui/settings/settings.h"
 #include "src/gui/settings/systempage.h"
@@ -85,6 +87,8 @@
 #include "src/gui/wireless/wifisettings.h"
 #include "src/gui/wireless/wifitransfer.h"
 #include "src/gui/wireless/wireless.h"
+#include "src/gui/tools/clocktools.h"
+#include "src/gui/tools/weatherpage.h"
 #include "src/system/bluetooth/bluetooth.h"
 #include "src/system/device/system.h"
 #include "src/system/device/usb.h"
@@ -616,6 +620,10 @@ void gui_init(gui_config_t *cfg) {
 	wireless_screen = lv_obj_create(NULL);
 	streaming_screen = lv_obj_create(NULL);
 	radiopage_screen = lv_obj_create(NULL);
+	rss_screen = lv_obj_create(NULL);
+	rss_feed_screen = lv_obj_create(NULL);
+	bandcamp_screen = lv_obj_create(NULL);
+	soundcloud_screen = lv_obj_create(NULL);
 	dacpage_screen = lv_obj_create(NULL);
 	radiolist_screen = lv_obj_create(NULL);
 	radiosearch_screen = lv_obj_create(NULL);
@@ -636,6 +644,9 @@ void gui_init(gui_config_t *cfg) {
 	gearboyplay_screen = lv_obj_create(NULL);
 	flappybird_screen = lv_obj_create(NULL);
 	metronomepage_screen = lv_obj_create(NULL);
+	clocktools_screen = lv_obj_create(NULL);
+	alarmset_screen = lv_obj_create(NULL);
+	weather_screen = lv_obj_create(NULL);
 
 	// Persistent topbar that stays above every screen.
 	topbar_init(cfg);
@@ -683,6 +694,8 @@ void gui_init(gui_config_t *cfg) {
 	gearboypage_init(cfg);
 	flappybird_init(cfg);
 	metronomepage_init(cfg);
+	clocktools_init(cfg);
+	weatherpage_init(cfg);
 	// before morepage: the books tile opens the shelf, and the shelf opens the
 	// reader.
 	ebookreader_init(cfg);
@@ -741,6 +754,7 @@ void gui_init(gui_config_t *cfg) {
 		// only way out of it.
 		medialist_tracks_screen, medialist_albums_screen, audiobooks_screen, wireless_screen,
 		streaming_screen,		 radiopage_screen,	radiolist_screen,	radiosearch_screen,
+		rss_screen,				 rss_feed_screen,	 bandcamp_screen,	soundcloud_screen,
 		morepage_screen,
 	};
 	for (size_t i = 0; i < sizeof(player_swipe_screens) / sizeof(player_swipe_screens[0]); i++) {
@@ -761,8 +775,10 @@ void gui_init(gui_config_t *cfg) {
 		wireless_screen,
 		wifisettings_screen,
 		btsettings_screen, btaudio_screen,	 airpodspage_screen, airplay_screen,   streaming_screen,
-		radiopage_screen,  radiolist_screen, radiosearch_screen,
+		radiopage_screen,  radiolist_screen, radiosearch_screen, rss_screen, rss_feed_screen, bandcamp_screen,
+		soundcloud_screen,
 		dlna_screen,	   sonixlink_screen,	 morepage_screen,	  gearboypage_screen, metronomepage_screen,
+		clocktools_screen, alarmset_screen, weather_screen,
 	};
 	for (size_t i = 0; i < sizeof(back_swipe_screens) / sizeof(back_swipe_screens[0]); i++) {
 		switcher_attach_back_gesture(back_swipe_screens[i]);
