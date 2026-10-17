@@ -102,7 +102,10 @@ This is everything Sonix Player can do today, on both the **R1** and the **R3 Pr
 - **Qobuz** - sign in with your account. MP3 320, FLAC 16/44.1, 24/96 and 24/192. Search, albums, artists, playlists, favourites and new releases. You can add and remove favourites and manage your playlists from the player.
 - **Radio** - thousands of stations by country, language or genre, plus search, favourites and recently played. MP3, AAC and FLAC stations.
   > **My stations** - write your own list in a `radio.txt` file in the root of the card, one station per line: `name, address`.
+- **Bandcamp** - play your own Bandcamp stream URLs from `bandcamp.txt` in the root of the card (`name, url` per line).
+- **SoundCloud** - play your own SoundCloud stream URLs from `soundcloud.txt` in the root of the card (`name, url` per line).
 - **Last.fm** - scrobbles what you listen to. Without Wi-Fi the plays are kept and sent the next time the player connects.
+- **RSS reader** - load your own feeds from `rss.txt` in the root of the card (`name, url` per line) and read their latest headlines.
 
 ## Podcasts
 
@@ -147,6 +150,8 @@ This is everything Sonix Player can do today, on both the **R1** and the **R3 Pr
 
 - **File manager** - browse the card, create folders, rename, move, copy and delete. Pictures and text files open right there.
 - **Metronome** - 30 to 250 BPM, up to 7 beats per bar, and tap tempo.
+- **Clock tools** - stopwatch, countdown timer and a daily alarm.
+- **Weather** - reads the weather from wttr.in. Set a location by writing it in `weather.txt` on the root of the card, or leave it empty for auto.
 - **Game Boy** (Gearboy) - plays Game Boy and Game Boy Color games, with their real names, save states, five palettes, shaders and color correction.
   > ROMs go in `Games/GB` and `Games/GBC`. The boot ROMs (optional) go in `Games/Bios`: `dmg_boot.bin` and `cgb_boot.bin`.
 - **Flappy Bird**, with sounds.
